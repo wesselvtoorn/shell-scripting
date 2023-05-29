@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+bestand="$home/$1"
+extensie="${bestand##*.}"	
+
+echo $bestand
+case $extensie in
+    "py")
+      python3 $bestand
+      ;;
+    "sh")
+      bash $bestand
+      ;;
+    "cc")
+      cat $bestand
+      ;;
+    *)
+      echo "Fout: ongeldige bestands type:" $extensie
+      ;;
+esac
