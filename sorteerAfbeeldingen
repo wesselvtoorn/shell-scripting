@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+
+if [ ! -d "$Afbeeldingen" ]; then
+    mkdir Afbeeldingen
+    echo "map gemaakt"
+fi
+
+find ~/ -type f \( -iname '*.png' -o -iname '*.jpg' \) -exec mv {} ~/shellscripting/Afbeeldingen \;
