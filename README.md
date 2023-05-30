@@ -1,9 +1,9 @@
 # huiswerk
 
-* ik weet niet waarom maar alle opdrachten kan ik niet besturen door:
+* ik weet niet waarom maar alle opdrachten kan ik niet besturen door: <br>
 $shellScript /pad/naar/EOS1_bestanden
-* maar ik moet in de map waar de script zit:
-$chmod +x shellScript
+* maar ik moet in de map waar de script zit: <br>
+$chmod +x shellScript <br>
 $./shellScript
 
 * sorteerAfbeelding: opdracht 0 <br>
