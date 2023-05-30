@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+for file in ~/shellscripting/Afbeeldingen/*.jpg; do
+    convert $file -resize 128x128 "$file.png"
+    echo "verandert" $file
+done
