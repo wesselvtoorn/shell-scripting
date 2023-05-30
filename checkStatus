@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+directory=$1
+command=$2
+logbestand=$3
+
+> $logbestand/.txt
+
+for file in $directory/*; do
+    if [ -f $file ]; then
+        $command $file >> $logbestand 2>&1
+        return_status=$?
+        echo $return_status
+        if [ $return_status -eq 0 ]; then
+            echo "goed:" $file >> $logbestand 
+            echo "goed"
+        else
+            echo "fout:" $file >> $logbestand
+            echo "fout"
+        fi
+    fi
+done
