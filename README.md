@@ -6,3 +6,5 @@ hij doet het maar, de output zegt dat de filles niet bestaan dus $./voerUit best
 
 * naarPNG: opdracht 2 <br>
 hij verandert de plaatjes hoewel het lijkt alsof hij het vaaker doet.
+
+* checkStatus: opdracht 3 <br>
