@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+wachtwoord_bestand=$1
+
+read -p "naam:" naam
+
+while true; do
+    read -s -p "wachtwoord:" wachtwoord1
+    read -s -p "herhaal wachtwoord:" wachtwoord2
+    
+    if [ "$wachtwoord1" == "$wachtwoord2" ] && [ ${#wachtwoord1} -ge 8 ]; then
+       break
+    else
+       echo "wachtwoorden zijn niet gelijk of niet lang genoeg."
+    fi
+done
+
+password_hash=$(echo -n "$wachtwoord1" | md5sum | cut -d " " -f 1)
+
+echo $naam:$wachtwoord1 > $wachtwoord_bestand
+echo gelukt!
+
