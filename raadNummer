@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+teller=1
+path=$1
+
+if ! type fim &> /dev/null; then
+    read -s -p "fim is niet geinstaleerd. wilt u het installeren? [y/n]: " antwoord
+    echo " "
+    if [ $antwoord == "y" ]; then
+        sudo apt install fim
+        echo " "
+    else
+        echo "sorry, dit kan dan niet worden uitgevoerd."
+        exit 
+    fi
+fi
+
+echo "oke jij wilt dus een spelletje spelen huh?"
+read -s -p "raad maar mijn nummer tussen de 0 en 30: " raad
+
+num=$((RANDOM % 5))
+
+while [ "$raad" != "$num" ]; do
+    read -s -p "ja, dat is het niet. probeer opnieuw: " raad
+    let teller=teller+1
+    echo " "
+done
+
+echo "HEEEYYY je hebt hem (eindelijk...) het was:" $raad
+echo "je hebt er" $teller "keer over gedaan..."
+
+fim -a $path
+exit
