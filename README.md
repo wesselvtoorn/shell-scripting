@@ -8,3 +8,5 @@ hij doet het maar, de output zegt dat de filles niet bestaan dus $./voerUit best
 hij verandert de plaatjes hoewel het lijkt alsof hij het vaaker doet.
 
 * checkStatus: opdracht 3 <br>
+* maakLogin: opdracht 4 <br> 
+doet het maar ik weet niet of het meerdere moet opslaan want hij doet her maar een.
