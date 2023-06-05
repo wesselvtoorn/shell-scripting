@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 
 teller=1
-path=$1
 
 if ! type fim &> /dev/null; then
-    read -s -p "fim is niet geinstaleerd. wilt u het installeren? [y/n]: " antwoord
+    read -p "fim is niet geinstaleerd. wilt u het installeren? [y/n]: " antwoord
     echo " "
     if [ $antwoord == "y" ]; then
         sudo apt install fim
@@ -16,18 +15,18 @@ if ! type fim &> /dev/null; then
 fi
 
 echo "oke jij wilt dus een spelletje spelen huh?"
-read -s -p "raad maar mijn nummer tussen de 0 en 30: " raad
+read -p "raad maar mijn nummer tussen de 0 en 30: " raad
 
-num=$((RANDOM % 5))
+num=$((RANDOM % 30));
 
 while [ "$raad" != "$num" ]; do
-    read -s -p "ja, dat is het niet. probeer opnieuw: " raad
+    read -p "ja, dat is het niet. probeer opnieuw: " raad
     let teller=teller+1
     echo " "
 done
 
 echo "HEEEYYY je hebt hem (eindelijk...) het was:" $raad
-echo "je hebt er" $teller "keer over gedaan..."
+echo "je hebt er $teller keer over gedaan..."
 
-fim -a $path
+fim good_job.png
 exit
